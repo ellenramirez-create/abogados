@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliado Jurídico | Firma de Abogados y Asesoría Legal Especializada</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0B192C',
+                            800: '#1E3E62',
+                            700: '#2A4E78',
+                            600: '#365E8E'
+                        },
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#D4AF37',
+                            600: '#C5A059',
+                            700: '#9B7B31'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #9B7B31 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9B7B31 100%);
+        }
+        .gold-gradient-bg:hover {
+            background: linear-gradient(135deg, #E5C048 0%, #D4AF37 50%, #AC8C42 100%);
+        }
+        .bg-navy-pattern {
+            background-color: #0B192C;
+            background-image: radial-gradient(circle at 50% 50%, rgba(30, 62, 98, 0.4) 0%, rgba(11, 25, 44, 0.95) 100%);
+        }
+        .glass-card {
+            background: rgba(30, 62, 98, 0.25);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#070F1B] text-slate-200 font-sans antialiased selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-navy-900/90 backdrop-blur-md border-b border-navy-800/80" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-navy-900 shadow-lg shadow-gold-500/10 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl font-bold tracking-wider text-white group-hover:text-gold-500 transition-colors">ALIADO</span>
+                        <span class="text-xs uppercase font-semibold text-gold-500 tracking-[0.25em]">JURÍDICO</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm font-medium hover:text-gold-500 transition-colors text-white">Inicio</a>
+                    <a href="#nosotros" class="text-sm font-medium hover:text-gold-500 transition-colors text-slate-300">Nosotros</a>
+                    <a href="#servicios" class="text-sm font-medium hover:text-gold-500 transition-colors text-slate-300">Servicios</a>
+                    <a href="#evaluador" class="text-sm font-medium hover:text-gold-500 transition-colors text-slate-300">Evaluador</a>
+                    <a href="#testimonios" class="text-sm font-medium hover:text-gold-500 transition-colors text-slate-300">Casos & Opiniones</a>
+                    <a href="#contacto" class="text-sm font-medium hover:text-gold-500 transition-colors text-slate-300">Contacto</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openModal('consultaModal')" class="gold-gradient-bg text-navy-900 font-bold px-5 py-2.5 rounded-lg text-sm transition-all duration-300 shadow-md hover:shadow-gold-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span>Consulta Gratuita</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white p-2 rounded-md focus:outline-none" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div class="hidden md:hidden bg-navy-900/95 border-b border-navy-800 transition-all" id="mobile-menu">
+            <div class="px-4 pt-3 pb-6 space-y-3">
+                <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-navy-800">Inicio</a>
+                <a href="#nosotros" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Nosotros</a>
+                <a href="#servicios" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Servicios</a>
+                <a href="#evaluador" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Evaluador</a>
+                <a href="#testimonios" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Casos & Opiniones</a>
+                <a href="#contacto" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Contacto</a>
+                <button onclick="openModal('consultaModal')" class="w-full mt-2 gold-gradient-bg text-navy-900 font-bold px-5 py-3 rounded-lg text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-xs"></i>
+                    <span>Consulta Gratuita</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 bg-navy-pattern overflow-hidden">
+        <!-- Background Accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute right-0 bottom-0 w-96 h-96 bg-navy-700/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content Left -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 border border-gold-500/30 text-gold-500 text-xs sm:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Excelencia y Respaldo Legal Garantizado</span>
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        Tu defensa y tranquilidad, <br class="hidden sm:inline">
+                        <span class="gold-gradient-text">nuestro compromiso legal</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Brindamos soluciones jurídicas estratégicas e integrales con un enfoque de alta efectividad. Proteger tus intereses, bienes y derechos con rigor profesional es nuestra absoluta prioridad.
+                    </p>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <button onclick="openModal('consultaModal')" class="w-full sm:w-auto gold-gradient-bg text-navy-900 font-bold px-8 py-4 rounded-xl text-base transition-all duration-300 shadow-lg shadow-gold-500/20 hover:scale-[1.02] flex items-center justify-center gap-3">
+                            <span>Solicitar Asesoría Ya</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+                        <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-700 hover:border-gold-500/50 text-white font-medium text-base hover:bg-navy-800/50 transition-all text-center flex items-center justify-center gap-2">
+                            <span>Conocer Servicios</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics Grid -->
+                    <div class="pt-8 border-t border-navy-800/80 grid grid-cols-2 sm:grid-cols-3 gap-6 text-center lg:text-left">
+                        <div>
+                            <div class="font-serif text-2xl sm:text-3xl font-bold text-gold-500">+15 Años</div>
+                            <div class="text-xs sm:text-sm text-slate-400 mt-1">Experiencia Comprobada</div>
+                        </div>
+                        <div>
+                            <div class="font-serif text-2xl sm:text-3xl font-bold text-gold-500">98%</div>
+                            <div class="text-xs sm:text-sm text-slate-400 mt-1">Casos Éxitosos</div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <div class="font-serif text-2xl sm:text-3xl font-bold text-gold-500">+$25M</div>
+                            <div class="text-xs sm:text-sm text-slate-400 mt-1">Recuperado a Clientes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Form / Hero Card Right -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl shadow-2xl relative">
+                        <div class="absolute -top-3 right-6 bg-gold-500 text-navy-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                            Respuesta en &lt; 2 Horas
+                        </div>
+
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-2">Evaluación Confidencial</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mb-6">Describe tu situación y un abogado especialista analizará tu caso sin costo inicial.</p>
+
+                        <form id="heroQuickForm" onsubmit="handleQuickFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Nombre Completo</label>
+                                <input type="text" required placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-3 bg-navy-900/80 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Teléfono / Whatsapp</label>
+                                    <input type="tel" required placeholder="+51 900 000 000" class="w-full px-4 py-3 bg-navy-900/80 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Área Legal</label>
+                                    <select class="w-full px-4 py-3 bg-navy-900/80 border border-navy-700 rounded-lg text-white focus:outline-none focus:border-gold-500 text-sm">
+                                        <option value="civil">Derecho Civil</option>
+                                        <option value="penal">Derecho Penal</option>
+                                        <option value="laboral">Derecho Laboral</option>
+                                        <option value="corporativo">Corporativo</option>
+                                        <option value="familia">Familia</option>
+                                        <option value="tributario">Tributario</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Resumen de tu Consulta</label>
+                                <textarea rows="3" required placeholder="Explica brevemente lo sucedido..." class="w-full px-4 py-3 bg-navy-900/80 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full gold-gradient-bg text-navy-900 font-bold py-3.5 rounded-lg text-sm transition-all duration-300 shadow-md hover:brightness-110 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Enviar Caso a Revisión</span>
+                            </button>
+
+                            <p class="text-[10px] text-slate-400 text-center flex items-center justify-center gap-1">
+                                <i class="fa-solid fa-lock text-gold-500"></i>
+                                <span>Garantía estricta de confidencialidad y secreto profesional.</span>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS / POR QUÉ ELEGIRNOS -->
+    <section id="nosotros" class="py-20 bg-[#0B1524] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-gold-500 mb-2">Por Qué Elegir Aliado Jurídico</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white">Defendemos tus derechos con rigor, ética y visión estratégica</h3>
+                <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 text-2xl mb-6">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">Transparencia Total</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sin sorpresas ni cargos ocultos. Te brindamos un diagnóstico claro y expectativas reales desde la primera consulta.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 text-2xl mb-6">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">Sólida Experiencia</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Nuestros litigantes cuentan con posgrados e intachable trayectoria en tribunales de alta complejidad.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 text-2xl mb-6">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">Atención 24/7 Urgencias</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Entendemos que las situaciones penales y de cautela no esperan. Nuestro equipo de guardia responde al instante.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 text-2xl mb-6">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">Enfoque a Resultados</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Diseñamos tácticas de litigio y negociación orientadas a mitigar riesgos y maximizar el beneficio para el cliente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS / ÁREAS DE PRÁCTICA -->
+    <section id="servicios" class="py-24 bg-navy-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-gold-500 mb-2">Áreas de Especialización</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white">Servicios Legales de Alto Nivel</h3>
+                <p class="text-slate-400 text-sm sm:text-base mt-3">Selecciona el área de tu interés para conocer cómo podemos ayudarte o solicitar un presupuesto.</p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-2xl border border-navy-700/80 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-3">Derecho Civil</h4>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Protegemos tu patrimonio y acuerdos contractuales con firmeza legal.</p>
+                        <ul class="space-y-2 mb-8 text-xs sm:text-sm text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Redacción y resolución de contratos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Disputas de Propiedad e Inmuebles</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Sucesiones y Testamentos</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('civil')" class="w-full py-3 px-4 rounded-lg bg-navy-800 hover:bg-gold-500 hover:text-navy-900 border border-gold-500/30 text-gold-500 text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Ver detalles de cobertura</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-2xl border border-navy-700/80 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-3">Derecho Penal</h4>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Defensa técnica especializada y representación estratégica de alta urgencia.</p>
+                        <ul class="space-y-2 mb-8 text-xs sm:text-sm text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Defensa penal preventiva y procesal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Delitos económicos y corporativos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Asistencia en detenciones y fiscalías</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('penal')" class="w-full py-3 px-4 rounded-lg bg-navy-800 hover:bg-gold-500 hover:text-navy-900 border border-gold-500/30 text-gold-500 text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Ver detalles de cobertura</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-2xl border border-navy-700/80 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-3">Derecho Laboral</h4>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Equilibrio y representación formal para trabajadores y empleadores.</p>
+                        <ul class="space-y-2 mb-8 text-xs sm:text-sm text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Despidos intempestivos e indemnizaciones</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Negociación colectiva y sindicatos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Auditorías laboral-patronales</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('laboral')" class="w-full py-3 px-4 rounded-lg bg-navy-800 hover:bg-gold-500 hover:text-navy-900 border border-gold-500/30 text-gold-500 text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Ver detalles de cobertura</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-8 rounded-2xl border border-navy-700/80 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-3">Derecho Corporativo</h4>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Blindaje legal para empresas en crecimiento y grandes corporaciones.</p>
+                        <ul class="space-y-2 mb-8 text-xs sm:text-sm text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Constitución y reestructuración empresarial</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Fusiones, Adquisiciones (M&A) y Due Diligence</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Mantenimiento corporativo anual</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('corporativo')" class="w-full py-3 px-4 rounded-lg bg-navy-800 hover:bg-gold-500 hover:text-navy-900 border border-gold-500/30 text-gold-500 text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Ver detalles de cobertura</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="glass-card p-8 rounded-2xl border border-navy-700/80 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-people-roof"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-3">Derecho de Familia</h4>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Acompañamiento humano y profesional en procesos familiares delicados.</p>
+                        <ul class="space-y-2 mb-8 text-xs sm:text-sm text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Divorcios mutuo acuerdo o contenciosos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Custodia y Régimen de Visitas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Pensión de Alimentos y Liquidación</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('familia')" class="w-full py-3 px-4 rounded-lg bg-navy-800 hover:bg-gold-500 hover:text-navy-900 border border-gold-500/30 text-gold-500 text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Ver detalles de cobertura</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="glass-card p-8 rounded-2xl border border-navy-700/80 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-3">Tributario & Financiero</h4>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">Defensa ante la administración tributaria y optimización fiscal legal.</p>
+                        <ul class="space-y-2 mb-8 text-xs sm:text-sm text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Atención a Auditorías e Impugnaciones</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Planificación Fiscal Preventiva</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Defraudaría y Contencioso Tributario</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('tributario')" class="w-full py-3 px-4 rounded-lg bg-navy-800 hover:bg-gold-500 hover:text-navy-900 border border-gold-500/30 text-gold-500 text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Ver detalles de cobertura</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA / HERRAMIENTA INTERACTIVA DE EVALUACIÓN -->
+    <section id="evaluador" class="py-20 bg-[#0A1422] relative overflow-hidden border-y border-navy-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-gold-500/20 bg-gradient-to-b from-navy-800/40 to-navy-900/90 shadow-2xl">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="px-3 py-1 bg-gold-500/10 text-gold-500 text-xs font-semibold rounded-full border border-gold-500/30 uppercase tracking-wide">
+                        Herramienta Digital Interactiva
+                    </span>
+                    <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white mt-3">Calculadora de Viabilidad y Prioridad del Caso</h3>
+                    <p class="text-slate-300 text-sm mt-2">Responde 3 preguntas rápidas para clasificar la urgencia de tu expediente y estimar tiempos de acción legal.</p>
+                </div>
+
+                <!-- Step Wizard Form -->
+                <div id="calculatorBox" class="space-y-6">
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Step 1 -->
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gold-500 mb-2">1. Materia del Conflicto</label>
+                            <select id="calcArea" class="w-full p-3.5 bg-navy-900 border border-navy-700 rounded-xl text-white text-sm focus:border-gold-500 focus:outline-none">
+                                <option value="civil">Patrimonial / Reclamación / Civil</option>
+                                <option value="penal">Penal / Investigaciones / Citatorio</option>
+                                <option value="laboral">Laboral / Despido / Reclamo</option>
+                                <option value="corporativo">Empresarial / Contrato / Socios</option>
+                                <option value="familia">Familia / Divorcio / Custodia</option>
+                            </select>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gold-500 mb-2">2. Nivel de Urgencia</label>
+                            <select id="calcUrgency" class="w-full p-3.5 bg-navy-900 border border-navy-700 rounded-xl text-white text-sm focus:border-gold-500 focus:outline-none">
+                                <option value="alta">Alta (Plazo judicial o citación activa)</option>
+                                <option value="media">Media (Aconteció en los últimos 30 días)</option>
+                                <option value="baja">Baja (Consulta preventiva / A futuro)</option>
+                            </select>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gold-500 mb-2">3. Posee Documentación</label>
+                            <select id="calcDocs" class="w-full p-3.5 bg-navy-900 border border-navy-700 rounded-xl text-white text-sm focus:border-gold-500 focus:outline-none">
+                                <option value="si">Sí, cuento con contratos/pruebas</option>
+                                <option value="parcial">Parcial / En recopilación</option>
+                                <option value="no">No poseo documentos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-4">
+                        <button onclick="calculateEstimate()" class="gold-gradient-bg text-navy-900 font-bold px-8 py-3.5 rounded-xl text-sm transition-transform hover:scale-105 shadow-lg">
+                            <i class="fa-solid fa-calculator mr-2"></i> Generar Pre-Diagnóstico
+                        </button>
+                    </div>
+
+                    <!-- Result Box (Hidden by default) -->
+                    <div id="calcResult" class="hidden mt-8 p-6 bg-navy-900/90 rounded-2xl border border-gold-500/40 text-center space-y-4">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold-500/20 text-gold-500 text-xl">
+                            <i class="fa-solid fa-square-check"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-white" id="resultTitle">Caso con Alta Viabilidad de Intervención</h4>
+                        <p class="text-slate-300 text-sm max-w-xl mx-auto" id="resultDesc">
+                            Con base en tus datos, sugerimos iniciar el proceso de revisión de pruebas inmediatamente antes del vencimiento de plazos legales.
+                        </p>
+                        <div class="pt-2">
+                            <button onclick="openModal('consultaModal')" class="bg-gold-500 text-navy-900 font-bold px-6 py-2.5 rounded-lg text-xs uppercase tracking-wider hover:bg-gold-400 transition-colors">
+                                Agendar Llamada de Urgencia Sin Costo
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- METRICAS / ESTADÍSTICAS EN VIVO -->
+    <section class="py-16 bg-navy-900 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                
+                <div class="p-4">
+                    <div class="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text mb-2">+1,800</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 uppercase tracking-wider">Casos Ganados</div>
+                </div>
+
+                <div class="p-4">
+                    <div class="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text mb-2">99%</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 uppercase tracking-wider">Satisfacción Cliente</div>
+                </div>
+
+                <div class="p-4">
+                    <div class="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text mb-2">24/7</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 uppercase tracking-wider">Soporte Penal & Urgencias</div>
+                </div>
+
+                <div class="p-4">
+                    <div class="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text mb-2">25+</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 uppercase tracking-wider">Abogados Especialistas</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS Y CASOS DE ÉXITO -->
+    <section id="testimonios" class="py-24 bg-[#081220]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-gold-500 mb-2">Testimonios Reales</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white">Lo que dicen nuestros clientes</h3>
+                <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-500 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+                            "Lograron resolver una disputa societaria muy compleja que llevaba más de dos años estancada. Su enfoque estratégico y la claridad en todo momento marcaron la diferencia."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-navy-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 font-bold flex items-center justify-center font-serif text-sm">
+                            RG
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-sm">Roberto Gutiérrez</h5>
+                            <p class="text-xs text-slate-400">CEO Grupo Empresarial Delta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-500 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+                            "En una situación delicada de indemnización laboral, el equipo de Aliado Jurídico fue sumamente empático y logró una compensación mucho mayor a la esperada."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-navy-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 font-bold flex items-center justify-center font-serif text-sm">
+                            MS
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-sm">María Sofía S.</h5>
+                            <p class="text-xs text-slate-400">Cliente de Derecho Laboral</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-500 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+                            "Su asesoría contencioso-tributaria nos evitó una sanción exorbitante. Se nota el conocimiento profundo y el trato profesional que le dan a cada cliente."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-navy-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-500 font-bold flex items-center justify-center font-serif text-sm">
+                            JA
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-sm">Javier Alarcón</h5>
+                            <p class="text-xs text-slate-400">Director Operativo Global Risk</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y UBICACIÓN -->
+    <section id="contacto" class="py-24 bg-navy-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Info Column Left -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h2 class="text-xs uppercase font-bold tracking-widest text-gold-500 mb-2">Atención Directa</h2>
+                        <h3 class="font-serif text-3xl font-bold text-white mb-4">Ponte en contacto con nuestro bufete</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Estamos disponibles para agendar una cita presencial en nuestras oficinas o llevar a cabo una sesión virtual confidencial.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm mb-1">Sede Principal</h4>
+                                <p class="text-slate-400 text-xs sm:text-sm">Av. Empresarial 450, Piso 12, Centro Financiero</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 flex-shrink-0">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm mb-1">Central Telefónica</h4>
+                                <p class="text-slate-400 text-xs sm:text-sm">+51 (01) 500-8000 / +51 987 654 321</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 flex-shrink-0">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm mb-1">Correo Electrónico</h4>
+                                <p class="text-slate-400 text-xs sm:text-sm">contacto@aliadojuridico.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-800 border border-gold-500/30 flex items-center justify-center text-gold-500 flex-shrink-0">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm mb-1">Horario de Atención</h4>
+                                <p class="text-slate-400 text-xs sm:text-sm">Lun - Vie: 8:00 AM - 7:00 PM | Guardia Penal: 24 Horas</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Placeholder Google Maps Card -->
+                    <div class="rounded-2xl overflow-hidden border border-navy-700 bg-navy-800/50 h-48 flex items-center justify-center relative">
+                        <div class="text-center p-4">
+                            <i class="fa-solid fa-map-location-dot text-3xl text-gold-500 mb-2"></i>
+                            <p class="text-xs text-slate-300">Mapa Interactivo - Ubicación Google Maps</p>
+                            <span class="text-[10px] text-slate-500">Estacionamiento privado para clientes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column Right -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 sm:p-10 rounded-2xl border border-gold-500/20">
+                        <h4 class="font-serif text-2xl font-bold text-white mb-2">Agendar Consulta Confidencial</h4>
+                        <p class="text-xs sm:text-sm text-slate-300 mb-6">Completa el formulario y un especialista te llamará en breve.</p>
+
+                        <form id="mainContactForm" onsubmit="handleMainFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Nombre Completo *</label>
+                                    <input type="text" required placeholder="Ej. Ana Belén Perez" class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Correo Electrónico *</label>
+                                    <input type="email" required placeholder="correo@ejemplo.com" class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Teléfono Móvil *</label>
+                                    <input type="tel" required placeholder="+51 900 000 000" class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Especialidad Requerida</label>
+                                    <select class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none">
+                                        <option value="civil">Derecho Civil</option>
+                                        <option value="penal">Derecho Penal</option>
+                                        <option value="laboral">Derecho Laboral</option>
+                                        <option value="corporativo">Corporativo / Empresas</option>
+                                        <option value="familia">Familia & Sucesiones</option>
+                                        <option value="tributario">Tributario</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Detalles del Caso o Consulta *</label>
+                                <textarea rows="4" required placeholder="Proporciona detalles clave para poder asignar al especialista adecuado..." class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none resize-none"></textarea>
+                            </div>
+
+                            <div class="flex items-start space-x-2 text-xs text-slate-400">
+                                <input type="checkbox" id="terms" required class="mt-1 rounded bg-navy-900 border-navy-700 text-gold-500 focus:ring-gold-500">
+                                <label for="terms">Acepto la política de privacidad y el tratamiento confidencial de mis datos.</label>
+                            </div>
+
+                            <button type="submit" class="w-full gold-gradient-bg text-navy-900 font-bold py-4 rounded-xl text-sm transition-all duration-300 shadow-lg hover:brightness-110 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-shield-cat"></i>
+                                <span>Solicitar Evaluación de Caso</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 border-t border-navy-800 pt-16 pb-8 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                
+                <!-- Col 1: Branding -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#inicio" class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-lg gold-gradient-bg flex items-center justify-center text-navy-900 font-bold">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <span class="font-serif text-lg font-bold tracking-wider text-white">ALIADO <span class="text-gold-500">JURÍDICO</span></span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        Estudio de Abogados comprometido con la excelencia legal, la defensa ética y la protección integral del patrimonio personal y corporativo.
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-navy-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-colors"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-navy-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-navy-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-colors"><i class="fa-brands fa-twitter text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-navy-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Enlaces Rápidos -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Navegación</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-gold-500 transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-gold-500 transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Áreas de Práctica</a></li>
+                        <li><a href="#evaluador" class="hover:text-gold-500 transition-colors">Calculadora Legal</a></li>
+                        <li><a href="#testimonios" class="hover:text-gold-500 transition-colors">Casos de Éxito</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Servicios -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Especialidades</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Derecho Civil</a></li>
+                        <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Derecho Penal</a></li>
+                        <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Derecho Laboral</a></li>
+                        <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Derecho Corporativo</a></li>
+                        <li><a href="#servicios" class="hover:text-gold-500 transition-colors">Familia y Sucesiones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Legales -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Avisos Legales</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Secreto Profesional</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Libro de Reclamaciones</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-navy-800 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400">
+                <p>&copy; 2026 Aliado Jurídico. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Diseñado con excelencia para la alta práctica legal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING ACTION BUTTON (FAB) -->
+    <a href="https://wa.me/51987654321?text=Hola,%20deseo%20solicitar%20una%20consulta%20legal%20con%20Aliado%20Jur%C3%ADdico." 
+       target="_blank" 
+       rel="noopener" 
+       class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300"
+       aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- MODAL DE CONSULTA GENERAL -->
+    <div id="consultaModal" class="fixed inset-0 z-50 hidden bg-navy-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card bg-navy-900 border border-gold-500/30 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-fade-in">
+            <button onclick="closeModal('consultaModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-navy-900 font-bold">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-white">Agendar Consulta Gratuita</h3>
+                    <p class="text-xs text-gold-500">Sesión confidencial de 20 minutos</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleModalFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Nombre Completo</label>
+                    <input type="text" required placeholder="Tu nombre" class="w-full px-4 py-2.5 bg-navy-800 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Teléfono / WhatsApp</label>
+                    <input type="tel" required placeholder="+51 900 000 000" class="w-full px-4 py-2.5 bg-navy-800 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Modalidad de Preferencia</label>
+                    <select class="w-full px-4 py-2.5 bg-navy-800 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none">
+                        <option>Llamada Telefónica</option>
+                        <option>Reunión por Zoom / Google Meet</option>
+                        <option>Presencial en Oficina</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Breve descripción del caso</label>
+                    <textarea rows="3" required placeholder="Escribe aquí tu consulta..." class="w-full px-4 py-2.5 bg-navy-800 border border-navy-700 rounded-lg text-white text-sm focus:border-gold-500 focus:outline-none resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full gold-gradient-bg text-navy-900 font-bold py-3 rounded-lg text-sm transition-all hover:brightness-110">
+                    Confirmar Solicitud de Cita
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALLE DE SERVICIOS -->
+    <div id="serviceModal" class="fixed inset-0 z-50 hidden bg-navy-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card bg-navy-900 border border-gold-500/30 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal('serviceModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="w-12 h-12 rounded-lg bg-gold-500/20 text-gold-500 flex items-center justify-center text-2xl mb-4" id="serviceModalIcon">
+                <i class="fa-solid fa-balance-scale"></i>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white mb-2" id="serviceModalTitle">Título del Servicio</h3>
+            <p class="text-slate-300 text-sm mb-6" id="serviceModalDesc">Descripción del servicio legal...</p>
+
+            <div class="bg-navy-800/80 p-4 rounded-xl border border-navy-700 mb-6">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-gold-500 mb-2">Alcance de Nuestra Asesoría:</h4>
+                <ul class="space-y-2 text-xs text-slate-300" id="serviceModalList">
+                    <!-- Dinámico via JS -->
+                </ul>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button onclick="closeModal('serviceModal'); openModal('consultaModal')" class="flex-1 gold-gradient-bg text-navy-900 font-bold py-3 rounded-lg text-sm text-center">
+                    Solicitar Presupuesto Especializado
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN DE ÉXITO -->
+    <div id="toastSuccess" class="fixed top-24 right-6 z-50 hidden bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <div>
+            <h5 class="font-bold text-sm">¡Solicitud Enviada con Éxito!</h5>
+            <p class="text-xs text-emerald-100">Un abogado especialista te contactará muy pronto.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Modal Helpers
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Service Details Data & Modal Trigger
+        const servicesData = {
+            civil: {
+                title: "Derecho Civil y Patrimonial",
+                icon: "fa-file-contract",
+                desc: "Brindamos seguridad jurídica a tus transacciones, acuerdos y bienes inmuebles. Prevenimos y resolvemos conflictos entre particulares.",
+                items: [
+                    "Elaboración, revisión y auditoría de contratos civiles y mercantiles.",
+                    "Procesos de Reivindicación de Propiedad y Desalojos.",
+                    "Sucesiones Intestadas, Testamentos y Partición de Herencias.",
+                    "Indemnizaciones por Daños y Perjuicios."
+                ]
+            },
+            penal: {
+                title: "Derecho Penal de Alta Complejidad",
+                icon: "fa-gavel",
+                desc: "Defensa legal rigurosa desde las primeras diligencias preliminares. Asistencia técnica inmediata en situaciones críticas.",
+                items: [
+                    "Defensa técnica en investigaciones fiscales y juicios orales.",
+                    "Delitos Financieros, Corrupción de Funcionarios y Compliance Penal.",
+                    "Atención de detenciones urgentes e interposición de Habeas Corpus.",
+                    "Representación de Víctimas y querellas por Difamación."
+                ]
+            },
+            laboral: {
+                title: "Derecho Laboral y Relaciones de Trabajo",
+                icon: "fa-briefcase",
+                desc: "Asesoramiento integral tanto a trabajadores que buscan hacer respetar sus derechos como a empresas en gestión patronal.",
+                items: [
+                    "Defensa contra despidos arbitrarios e intempestivos.",
+                    "Cálculo y reclamo de beneficios sociales y utilidades.",
+                    "Negociaciones colectivas y prevención de conflictos sindicatos.",
+                    "Auditorías laborales de cumplimiento normativo."
+                ]
+            },
+            corporativo: {
+                title: "Derecho Corporativo y Empresarial",
+                icon: "fa-building-shield",
+                desc: "Socio legal para startups, PYMES y corporaciones. Estructuración jurídica para escalabilidad sin riesgos.",
+                items: [
+                    "Constitución de sociedades, estatutos y pactos de socios.",
+                    "Fusiones, Adquisiciones (M&A) y Procesos de Due Diligence.",
+                    "Protección de Marcas, Patentes y Propiedad Intelectual.",
+                    "Mantenimiento legal corporativo y actas de directorio."
+                ]
+            },
+            familia: {
+                title: "Derecho de Familia y Personas",
+                icon: "fa-people-roof",
+                desc: "Atención cálida, objetiva y discreta en asuntos sensibles del núcleo familiar y la protección del menor.",
+                items: [
+                    "Divorcios de mutuo acuerdo y contenciosos.",
+                    "Regímenes de Custodia, Alimentos y Régimen de Visitas.",
+                    "Filicación, Patria Potestad y Adopciones.",
+                    "Liquidación de Sociedad de Gananciales."
+                ]
+            },
+            tributario: {
+                title: "Derecho Tributario y Financiero",
+                icon: "fa-coins",
+                desc: "Estrategias de planeamiento fiscal preventivo y defensa sólida ante fiscalizaciones de la administración tributaria.",
+                items: [
+                    "Impugnación de Resoluciones de Determinación y Multas.",
+                    "Acompañamiento en procesos de Auditoría Fiscal.",
+                    "Planeamiento tributario patrimonial y corporativo.",
+                    "Procesos Contencioso-Administrativos Tributarios."
+                ]
+            }
+        };
+
+        function openServiceModal(key) {
+            const data = servicesData[key];
+            if (!data) return;
+
+            document.getElementById('serviceModalTitle').innerText = data.title;
+            document.getElementById('serviceModalDesc').innerText = data.desc;
+            document.getElementById('serviceModalIcon').innerHTML = `<i class="fa-solid ${data.icon}"></i>`;
+
+            const listContainer = document.getElementById('serviceModalList');
+            listContainer.innerHTML = '';
+            data.items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-2';
+                li.innerHTML = `<i class="fa-solid fa-check text-gold-500 mt-0.5"></i> <span>${item}</span>`;
+                listContainer.appendChild(li);
+            });
+
+            openModal('serviceModal');
+        }
+
+        // Calculator Logic
+        function calculateEstimate() {
+            const area = document.getElementById('calcArea').value;
+            const urgency = document.getElementById('calcUrgency').value;
+            const resultBox = document.getElementById('calcResult');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultDesc = document.getElementById('resultDesc');
+
+            resultBox.classList.remove('hidden');
+
+            if (urgency === 'alta') {
+                resultTitle.innerText = "🚨 Caso con Máxima Urgencia Legal";
+                resultDesc.innerText = "Debido a los plazos procesales perentorios en materia " + area + ", es imprescindible una revisión de documentos dentro de las próximas 24 horas para salvaguardar tus derechos.";
+            } else if (urgency === 'media') {
+                resultTitle.innerText = "⚖️ Caso de Viabilidad Estándar - Recomendado Actuar";
+                resultDesc.innerText = "Tu caso se encuentra dentro de los plazos reglamentarios. Recomendamos una consulta previa para diseñar la estrategia de demanda o defensa.";
+            } else {
+                resultTitle.innerText = "📋 Evaluación Preventiva / Asesoría Planificada";
+                resultDesc.innerText = "Excelente oportunidad para aplicar blindaje jurídico preventivo en " + area + " antes de iniciar cualquier acción o firma formal.";
+            }
+        }
+
+        // Form Submit Handlers
+        function showNotification() {
+            const toast = document.getElementById('toastSuccess');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        function handleQuickFormSubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            showNotification();
+        }
+
+        function handleMainFormSubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            showNotification();
+        }
+
+        function handleModalFormSubmit(e) {
+            e.preventDefault();
+            closeModal('consultaModal');
+            e.target.reset();
+            showNotification();
+        }
+    </script>
+</body>
+</html>
